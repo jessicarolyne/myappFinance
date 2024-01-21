@@ -15,7 +15,7 @@ export default function App() {
   getColor();
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text>Open up App.tsx to start working on your app! T3XYNXFW3BL0EAMS</Text>
       <StatusBar style="auto" />
     </View>
   );
