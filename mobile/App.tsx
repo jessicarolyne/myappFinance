@@ -1,31 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import * as NavigationBar from 'expo-navigation-bar';
-import * as SystemUI from "expo-system-ui";
-import { useEffect } from 'react';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import React from "react";
+import Navigation from "./src/navigation/Navigator";
+import { View, Text, useColorScheme } from "react-native";
+import DarkTheme from './src/components/themes/appDarkTheme';
+import DefaultTheme from './src/components/themes/appLightTheme';
+import { red100 } from "react-native-paper/lib/typescript/styles/themes/v2/colors";
 
-
-export default function App() {
-  //Alterar a cor de fundo de acordo com o tema
-  const getColor = async() => {
-    const color = await NavigationBar.getBackgroundColorAsync();
-    SystemUI.setBackgroundColorAsync(color);
-  }
-  getColor();
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app! T3XYNXFW3BL0EAMS</Text>
-      <StatusBar style="auto" />
+const App: React.FC = () => {
+    const scheme = useColorScheme();
+    console.log(scheme)
+return (
+    <View style={{flex: 1, justifyContent: "center", alignContent: "center"}} >
+        <Navigation  />
     </View>
-  );
+)
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    //backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
